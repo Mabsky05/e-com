@@ -14,7 +14,11 @@ Product.init(
       allowNull: false,
       },
     price: { 
-        type: DATATypes.DECIMAL,
+        type: DATATypes.DECIMAL, //VALIDATE AND LIMIT (5,2)
+        allowNull: false,
+      },
+    stock: { 
+        type: DATATypes.INTEGER, //VALIDATE AND DEFAULT 10 
         allowNull: false,
       },
   },
