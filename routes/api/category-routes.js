@@ -1,14 +1,15 @@
 const router = require('express').Router();
-const { Category, Product } = require('../../models');
+const { Category, Product, ProductTag } = require('../../models');
 
 // The `/api/categories` endpoint
+const sequelize = require('../config/connection');
 
 // find all categories
 // be sure to include its associated Products
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const categoryData = await Category.findAll({
-      include: [{ model:Product}],
+      include: [{model:Product}, {model:ProductTag}],
     });
     res.status(200).json(categoryData);
   } catch (err) {
@@ -19,7 +20,7 @@ router.get('/', (req, res) => {
 
 // find one category by its `id` value
 // be sure to include its associated Products
-router.get('/:id', (req, res) => {
+router.get('/:id', async ( req, res) => {
   try {
     const categoryData = await Category.findbyPk(req.params.id, {
       include: [{model:Product}],
@@ -31,7 +32,7 @@ router.get('/:id', (req, res) => {
 });
 
 // create a new category
-router.post('/', (req, res) => { 
+router.post('/', async (req, res) => { 
   try {
     const categoryData = await Category.create(req.body);
     res.status(200).json(categoryData);
@@ -42,12 +43,12 @@ router.post('/', (req, res) => {
 });
 
 // update a category by its `id` value
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   
 });
 
 // delete a category by its `id` value
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const CategoryData = await CategoryData(destroy)({
       where: {
@@ -55,10 +56,10 @@ router.delete('/:id', (req, res) => {
       },
     });
     if (!CategoryData) {
-      res.status(404).json({message: 'No library card found with that id!'});
+      res.status(404).json({message: 'Not found'});
       return;
     }
-    res.status(200).json(libraryCardData);
+    res.status(200).json(CategoryData);
   } catch (err) {
     res.status(500).json(err);
   }
