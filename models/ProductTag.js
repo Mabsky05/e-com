@@ -13,11 +13,11 @@ ProductTag.init(
       autoIncrement: true,
     },
     product_id: { 
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       allowNull: false,
       },
     tag_id: { 
-        type: DataTypes.INT, 
+        type: DataTypes.INTEGER, 
         allowNull: false,
       },
     stock: { 
