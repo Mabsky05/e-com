@@ -20,10 +20,6 @@ ProductTag.init(
         type: DataTypes.INTEGER, 
         allowNull: false,
       },
-    stock: { 
-        type: DataTypes.INTEGER, 
-        allowNull: false,
-      },
   },
   {
     sequelize,
