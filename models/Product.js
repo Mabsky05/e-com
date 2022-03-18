@@ -18,10 +18,12 @@ Product.init(
     product_name: { 
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: "new_product"
       },
     price: { 
         type: DataTypes.DECIMAL, //VALIDATE AND LIMIT (5,2)
         allowNull: false,
+        defaultValue: "100.00"
       },
     stock: { 
         type: DataTypes.INTEGER, //VALIDATE AND DEFAULT 10 
