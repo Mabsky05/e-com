@@ -1,6 +1,6 @@
 # E-commerce Backend
 
-![alt text](assets/sample.jpg)
+![alt text](Assets/sample.jpg)
 
 ## Video Walkthrough
 https://youtu.be/3lLjXxWZeG4
