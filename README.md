@@ -23,10 +23,10 @@ Using Insomnia: This data can be viewed and modified.
 ## Instructions
 
 ### Pre-requisites
-Visual Studio to run code. 
-Node.js installed
-MySQL installed
-Insomnia installed
+Visual Studio to run code.<Br> 
+Node.js installed<Br>
+MySQL installed<Br>
+Insomnia installed<Br>
 <Br>
 
 ### NPM Installations
