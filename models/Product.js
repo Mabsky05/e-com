@@ -21,13 +21,12 @@ Product.init(
       defaultValue: "new_product"
       },
     price: { 
-        type: DataTypes.DECIMAL, //VALIDATE AND LIMIT (5,2)
+        type: DataTypes.DECIMAL, 
         allowNull: false,
         defaultValue: "100.00"
       },
     stock: { 
-        type: DataTypes.INTEGER, //VALIDATE AND DEFAULT 10 
-        // allowNull: false,
+        type: DataTypes.INTEGER, 
       },
   },
   {

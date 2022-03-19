@@ -6,7 +6,6 @@ const dirname = '/api/categories';
 // const sequelize = require('../config/connection');
 
 // find all categories
-// be sure to include its associated Products
 router.get('/', async (req, res) => {
   try {
     const categoryData = await Category.findAll({
@@ -20,7 +19,6 @@ router.get('/', async (req, res) => {
 
 
 // find one category by its `id` value
-// be sure to include its associated Products
 router.get('/:id', async (req, res) => {
   try {
     const categoryData = await Category.findOne({
@@ -67,20 +65,13 @@ router.delete('/:id', async (req, res) => {
     const CategoryData = await Category.destroy({
       where: {
         id: req.params.id
-      }
-    });
-    // ({
-    //   where: [{id: req.params.id}],
-    // });res.status(200).json(categoryData);
-    
+      }});    
     if (!CategoryData) {
       res.status(404).json({message: 'Not found'});
       return;
-    }
-    res.status(200).json(CategoryData);
+    } res.status(200).json(CategoryData);
   } catch (err) {
-    res.status(500).json(err);
-  }
-});
+      res.status(500).json(err);
+}});
 
 module.exports = router;
